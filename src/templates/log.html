@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logs Display</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org/dist/htmx.js"></script>
+</head>
+<body>
+    <h1>Logs</h1>
+    <table id="logsTable" hx-get="/get_logs" hx-trigger="every 5s">
+        <thead>
+            <tr>
+                <th>X</th>
+                <th>Y</th>
+                <th>Z</th>
+                <th>R</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Logs will be inserted here -->
+            {% for log in logs %}
+                <td>{{log.x}}</td>
+                <td>{{log.y}}</td>
+                <td>{{log.z}}</td>
+                <td>{{log.r}}</td>
+                <td>{{log.date}}</td>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org/dist/htmx.js"></script>
+</head>
+<body>
+    <h1>Home</h1>
+    <a href="/log" class="btn">Ver Logs</a>
+    <br>
+    <br>
+    <br>
+    <!-- Botão para mostrar portas disponíveis -->
+    <!-- Supondo que este botão ao ser clicado faça algo no backend que eventualmente leva à conexão e retorno dos dados do robô -->
+    <button hx-get="/ports" hx-target="#ports" hx-swap="outerHTML">Mostrar portas disponíveis</button>
+    <div id="ports"></div>
+    
+    <!-- Container para exibir o estado do robô -->
+    <!-- Este container será atualizado automaticamente após a conexão, sem necessidade de um botão adicional -->
+    <div id="robotState" style="display:none;">
+        <p>X: <span id="xValue">---</span></p>
+        <p>Y: <span id="yValue">---</span></p>
+        <p>Z: <span id="zValue">---</span></p>
+        <p>R: <span id="rValue">---</span></p>
+    </div>
+
+    <div id="error"></div>
+</body>
+</html>
