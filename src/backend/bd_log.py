@@ -9,7 +9,7 @@ db_path = os.path.join(script_dir, 'logs.json')
 db = TinyDB(db_path)
 
 # Define table
-logs_table = db.table('logs')
+# logs_table = db.table('logs')
 
 # Sample data
 logs = [
@@ -21,4 +21,6 @@ logs = [
 ]
 
 # Insert data into the database
-logs_table.insert_multiple(logs)
+# logs_table.insert_multiple(logs)
+for log in logs:
+    db.insert(log)
