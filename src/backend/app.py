@@ -3,13 +3,19 @@ from flask_cors import CORS
 from robo import InteliArm
 from serial.tools import list_ports
 from tinydb import TinyDB, Query
+import os
 
 app = Flask(__name__, template_folder='../templates')
 CORS(app)
 
 Robo = InteliArm()
 
-db = TinyDB('logs.json')
+# Get the directory path of the current Python script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(script_dir, 'logs.json')
+
+# Create the database
+db = TinyDB(db_path)
 
 
 @app.route('/', methods=['GET'])
