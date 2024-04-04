@@ -19,8 +19,8 @@ pip install -r requirements.txt
 
 pyhton src\backend\app.py
 
-Nota-se que só está disponível a totalidade das funções quando o computador estiver conectado por cabo.
+Nota-se que só está disponível a totalidade das funções quando o computador estiver conectado por cabo a um robô Dobot Magician.
 
 ## Vídeo de demonstração
 
-<a href="" target="_blank" rel="noopener noreferrer">Clique aqui</a>
+<a href="https://youtu.be/Fdpo0Z-8Oow" target="_blank" rel="noopener noreferrer">Clique aqui</a>
